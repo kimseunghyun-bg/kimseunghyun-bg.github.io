@@ -1,0 +1,28 @@
+# main links
+main:
+  - title: "About Me"
+    url: /about/
+  - title: "Programming"
+    url: /programming/
+  - title: "DevOps"
+    url: /devops/
+
+# programming links
+programming:
+  - title: programming
+    url: /programming/
+    children:
+      - title: "Java"
+        url: /programming/java/
+      - title: "Python"
+        url: /programming/python/
+      - title: "Bash Shell"
+        url: /programming/bash-shell/
+
+# devops links
+devops:
+  - title: devops
+    url: /devops/
+    children:
+      - title: "SVN"
+        url: /devops/svn/

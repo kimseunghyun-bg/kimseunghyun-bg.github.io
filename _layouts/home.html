@@ -1,0 +1,19 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+
+{% for collection in site.collections %}
+  {% assign entries = entries | concat: collection.docs %}
+{% endfor %}
+
+{% assign entries = entries | sort: 'date' | reverse %}
+
+{% for post in entries %}
+  {% unless collection.output == false or post.layout != "single" %}
+  {% include archive-single.html %}
+  {% endunless %}
+{% endfor %}
