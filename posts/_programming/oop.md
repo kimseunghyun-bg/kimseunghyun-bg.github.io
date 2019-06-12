@@ -1,7 +1,7 @@
 ---
-title: "Bash Shell"
+title: "Java"
 layout: collection-url
 collection: collection
-permalink: /programming/bash-shell/
+permalink: /programming/oop/
 author_profile: true
 ---

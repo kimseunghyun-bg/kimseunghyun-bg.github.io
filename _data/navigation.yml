@@ -12,12 +12,14 @@ programming:
   - title: programming
     url: /programming/
     children:
+      - title: "OOP"
+        url: /programming/oop/
       - title: "Java"
         url: /programming/java/
       - title: "Python"
         url: /programming/python/
       - title: "Bash Shell"
-        url: /programming/bash-shell/
+        url: /programming/bash_shell/
 
 # devops links
 devops:
