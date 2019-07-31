@@ -24,7 +24,109 @@ tags:
 
 래퍼 패턴(Wrapper Pattern) 이라고도 한다.
 
-<!-- 예제 -->
+한국의 `둥근 돼지코` 모양의 콘센트(220V)와 일본의 `납작 돼지코`모양의 110V 콘센트(110V)의 어댑터를 코드로 나타낸 코드입니다.
 
+예제
+---
+### KoreaPlugStandard.java
+```java
+package io.github.kimseunghyun_bg.adapter.plug;
+
+public interface KoreaPlugStandard {
+    String VOLT = "220v";
+    String getVolt();
+}
+```
+### KoreaPlug.java
+```java
+package io.github.kimseunghyun_bg.adapter.plug;
+
+public class KoreaPlug implements KoreaPlugStandard {
+
+    @Override
+    public String getVolt() {
+        return VOLT;
+    }
+}
+```
+### JapanPlugStandard.java
+```java
+package io.github.kimseunghyun_bg.adapter.plug;
+
+public interface JapanPlugStandard {
+    String VOLT = "110v";
+    String getVolt();
+}
+```
+### JapanPlug.java
+```java
+package io.github.kimseunghyun_bg.adapter.plug;
+
+public class JapanPlug implements JapanPlugStandard{
+    public String getVolt() {
+        return VOLT;
+    }
+}
+```
+### Main.java
+```java
+package io.github.kimseunghyun_bg.adapter;
+
+import io.github.kimseunghyun_bg.adapter.plug.JapanPlug;
+import io.github.kimseunghyun_bg.adapter.plug.KoreaPlug;
+import io.github.kimseunghyun_bg.adapter.socket.KoreaSocket;
+
+public class Main {
+    public static void main(String[] args) {
+        KoreaSocket koreaSocket = new KoreaSocket();
+        koreaSocket.plugin(new KoreaPlug());
+    }
+}
+
+// 출력 결과
+// Volt: 220v
+```
+### PlugAdapter.java
+```java
+package io.github.kimseunghyun_bg.adapter;
+
+import io.github.kimseunghyun_bg.adapter.plug.JapanPlug;
+import io.github.kimseunghyun_bg.adapter.plug.KoreaPlugStandard;
+
+public class PlugAdapter implements KoreaPlugStandard {
+    JapanPlug japanPlug;
+
+    public PlugAdapter(JapanPlug japanPlug) {
+        this.japanPlug = japanPlug;
+    }
+
+    @Override
+    public String getVolt() {
+        return japanPlug.getVolt();
+    }
+}
+```
+### Main.java
+```java
+package io.github.kimseunghyun_bg.adapter;
+
+import io.github.kimseunghyun_bg.adapter.plug.JapanPlug;
+import io.github.kimseunghyun_bg.adapter.plug.KoreaPlug;
+import io.github.kimseunghyun_bg.adapter.socket.KoreaSocket;
+
+public class Main {
+    public static void main(String[] args) {
+        KoreaSocket koreaSocket = new KoreaSocket();
+        koreaSocket.plugin(new KoreaPlug());
+
+        koreaSocket.plugin(new PlugAdapter(new JapanPlug()));
+    }
+}
+
+// 출력 결과
+// Volt: 220v
+// Volt: 110v
+```
+우리가 일상에서 흔히 접할 수 있는 콘센트 어댑터를 통해 어댑터패턴을 구현해 보았습니다.
+어댑터 패턴의 2가지 유형 (1.클래스 상속 & 인터페이스 구현, 2.인터페이스 구현 & 의존성 주입) 중에 2번째를 예시로 작성하였습니다.
 <!-- 더보기 -->
-
