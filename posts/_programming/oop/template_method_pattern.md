@@ -11,7 +11,7 @@ tags:
 >
 > ### 알고리즘의 뼈대를 오퍼레이션에 정의하고, 몇 개의 단계를 자식 클래스(subclass)에서 정의하게 미룬다. 템플릿 메소드는 알고리즘 구조의 변경 없이 자식 클래스에서 특정 단계의 알고리즘을 재정의 할 수 있게 해준다.
 
-![Template Method UML Diagram](../../../assets/images/design_pattern/Template_Method_UML_class_diagram.png)<center>Iterator UML Diagram</center>
+![Template Method UML Diagram](../../../assets/images/design_pattern/Template_Method_UML_class_diagram.png)<center>Template Method UML Diagram</center>
 
 
 장점
