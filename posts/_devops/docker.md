@@ -1,7 +1,7 @@
 ---
-title: "OOP"
+title: "Docker"
 layout: collection-url
 collection: collection
-permalink: /programming/oop/
+permalink: /devops/docker/
 author_profile: true
 ---
