@@ -3,9 +3,9 @@ title: "도커로 SVN 서버 구축하기"
 date: 2019-08-02
 tags:
   - docker
-  - subversion server
   - SVN server
-  - setup svn server
+  - docker svn 설치
+  - docker svn server setup
   - garethflowers/svn-server
 ---
 
