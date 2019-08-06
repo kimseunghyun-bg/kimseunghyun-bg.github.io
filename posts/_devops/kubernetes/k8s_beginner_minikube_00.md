@@ -1,5 +1,5 @@
 ---
-title: "무작정 쿠버네티스(Kubernetes) 해보기 00"
+title: "무작정 쿠버네티스(Kubernetes) 해보기 01"
 date: 2019-08-06
 tags:
   - Kubernetes
