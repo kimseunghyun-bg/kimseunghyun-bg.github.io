@@ -30,3 +30,5 @@ devops:
         url: /devops/svn/
       - title: "Docker"
         url: /devops/docker/
+      - title: "Kubernetes"
+        url: /devops/kubernetes/
