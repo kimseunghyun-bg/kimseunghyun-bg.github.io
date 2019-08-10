@@ -24,6 +24,7 @@ tags:
 4. (추가예정)
 
 # MiniKube 설치하기 (Window10 pro)
+
 0\. MiniKube란?
 ---
 Minikube는 로컬에 Kubernetes를이용한 개발(or 학습) 환경을 제공합니다. 쿠버네티스 학습과 개발자를 위한 로컬환경 구성에 이용됩니다.
