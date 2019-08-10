@@ -75,6 +75,7 @@ C:\Users\kimse\minikube_test> minikube service hello-minikube --url
 ```
 * 출력 결과의 port번호는 `kubectl get service`에서 8080:31000/TCP에서 확인된 포트와 같다.
 * IP주소는 `minikube ip`를 사용하면 얻는 주소와 같다.
+
 브라우저 접속
 ```console
 C:\Users\kimse\minikube_test> minikube service hello-minikube
