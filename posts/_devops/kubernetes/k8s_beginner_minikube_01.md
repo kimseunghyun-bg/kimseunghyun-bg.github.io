@@ -18,12 +18,12 @@ tags:
 시리즈
 ---
 0. ~~쿠버네티스에 대한 개념 잡기 (추가예정)~~
-1. MiniKube 설치 따라하기 (Window10 pro)
+1. MiniKube 설치하기 (Window10 pro)
 2. ~~제품 컨테이너 구동하기~~
 3. ~~Pod으로 단일 컨테이너 구동하기~~
 4. (추가예정)
 
-# MiniKube 설치 따라하기 (Window10 pro)
+# MiniKube 설치하기 (Window10 pro)
 0\. MiniKube란?
 ---
 Minikube는 로컬에 Kubernetes를이용한 개발(or 학습) 환경을 제공합니다. 쿠버네티스 학습과 개발자를 위한 로컬환경 구성에 이용됩니다.
