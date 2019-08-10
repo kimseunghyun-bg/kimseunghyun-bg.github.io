@@ -27,8 +27,8 @@ tags:
 # 공식 홈페이지 예제 실행하기(+.yaml)
 쿠버네티스 공식홈페이지(https://kubernetes.io/ko/docs/setup/learning-environment/minikube/)의 빠른실행 예제(CLI)를 실행하고, 같은 내용을 yaml 파일로 작성해서 실행을 해보겠습니다.
 
-1~6 빠른실행 예제 따라하기
-7~8 YAML파일로 바꿔서 실행하기
+* 1~6 빠른실행 예제 따라하기
+* 7~8 YAML파일로 바꿔서 실행하기
 
 1\. Deployment 만들기
 ---
