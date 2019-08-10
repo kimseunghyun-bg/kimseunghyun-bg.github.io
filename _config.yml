@@ -108,7 +108,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:"kimseunghyun.bg@gmail.com"
+      url: mailto:kimseunghyun.bg@gmail.com
     # - label: "Made Mistakes"
     #   icon: "fas fa-fw fa-link"
     #   url: "https://mademistakes.com"
