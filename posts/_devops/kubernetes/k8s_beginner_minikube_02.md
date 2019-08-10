@@ -129,6 +129,8 @@ deployment.extensions "hello-minikube" deleted
 
 6\. YAML파일로 Deployment 만들기
 ---
+명령어( `kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080` )로 실행했던 Deployment를 yaml파일로 실행해보겠습니다.
+
 Deployment 오브젝트 기술하기 (YAML파일 'hello-minikube-deployment.yml' 작성)
 ```yaml
 apiVersion: apps/v1
@@ -201,6 +203,8 @@ deployment.apps/hello-minikube created
 ```
 7\. YAML파일로 Service 만들기
 ---
+명령어( `kubectl expose deployment hello-minikube --type=NodePort` )로 실행했던 Service를 yaml파일로 실행해보겠습니다.
+
 Deployment 오브젝트 기술하기 (YAML파일 'hello-minikube-service.yml' 작성)
 ```yaml
 apiVersion: v1
