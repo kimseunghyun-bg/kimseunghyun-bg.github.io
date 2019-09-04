@@ -24,7 +24,7 @@ masthead_title           : # overrides the website title displayed in the masthe
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "false" # false (default), "disqus", "discourse", "facebook", "staticman_v2", "staticman", "utterances", "custom"
+  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman_v2", "staticman", "utterances", "custom"
   disqus:
     shortname            :
   discourse:
@@ -224,7 +224,7 @@ defaults:
       read_time: true
       comments: true
       share: true
-      related: true
+      related: false
       sidebar:
         nav: "main"
   - scope:
@@ -236,7 +236,7 @@ defaults:
       read_time: true
       comments: true
       share: true
-      related: true
+      related: false
       sidebar:
         nav: "programming"
   - scope:
@@ -248,7 +248,7 @@ defaults:
       read_time: true
       comments: true
       share: true
-      related: true
+      related: false
       sidebar:
         nav: "devops"
 
