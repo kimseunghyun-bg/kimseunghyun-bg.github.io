@@ -59,7 +59,7 @@ tags:
 
 ( 리펙토링은 내일의 `김승현`이 해줄 것이다.)
 
-```Java
+```java
 public class MachineTest {
 
     @Test
@@ -74,7 +74,7 @@ public class MachineTest {
     }
 }
 ```
-```Java
+```java
 public class Can {
     private String itemCode;
     private String name;
@@ -93,7 +93,7 @@ public class Can {
     }
 }
 ```
-```Java
+```java
 public class Machine {
     private int cash;   // amount를 cash로 변경했다. 
                         //  접근제어자를 private으로 변경하고 getter추가, 테스트에도 getter로 변경.
@@ -113,7 +113,7 @@ public class Machine {
 | __자판기에 Coke 2개 넣기__ |
 | 자판기에 Sprite 넣기 |
 
-```Java
+```java
 public class MachineTest {
     @Test
     public void insertCan_InsertCokeTwoTimes_HasTwoCoke() {
@@ -128,7 +128,7 @@ public class MachineTest {
     }
 }
 ```
-```Java
+```java
 public class Machine {
     public void insertCan(Can can) {
         Integer quantity = Optional.ofNullable(stock.get(can.getItemCode())).orElse(0);
@@ -146,7 +146,7 @@ public class Machine {
 | ~~자판기에 Coke 2개 넣기~~ |
 | __자판기에 Sprite 넣기__ |
 
-```Java
+```java
 public class MachineTest {
     @Test
     public void insertCan_InsertSprite_HasOneSprite() {
@@ -178,7 +178,7 @@ public class MachineTest {
 먼저 추가하자
 
 *(테스트 코드는 필요하면 복붙하는게 좋습니다. 단, 나중에 리펙토링 필수)*
-```Java
+```java
 public class MachineTest {
     @Test
     public void insertCan_InsertCoke_HasOneCoke() {
@@ -192,7 +192,7 @@ public class MachineTest {
     }
 }
 ```
-```Java
+```java
 public class Machine {
     public int getQuantityOfCan(Can can) {
         return Optional.ofNullable(stock.get(can.getItemCode())).orElse(0);
@@ -217,7 +217,7 @@ Machine의 getQuantityOfCan와 insertCan에 중복된 코드가 있다.
 
 **리펙토링!**
 
-```Java
+```java
 public class Machine {
 
     private int cash;
@@ -270,7 +270,7 @@ public class Machine {
 `자판기에서 음료수 뽑기`를 할 수 있을 것 같다.
 돈하고 음료수를 자판기에 넣었으니 이제 골라서 사기만 하면 된다.
 
-```Java
+```java
 public class MachineTest {
     @Test
     public void selectCan_SelectCoke_reduceStockAndCash() {
@@ -296,7 +296,7 @@ public class MachineTest {
 
 **나는 sellPrice를 입력하지 않았다.** 진행하며 추가해보자.
 
-```Java
+```java
 public class Machine {
     public void selectCan(Can can) {
         int quantity = getQuantityOfCan(can);
@@ -306,7 +306,7 @@ public class Machine {
 }
 ```
 **sellPrice를 추가해보자**
-```Java
+```java
 public class Can {
     private String itemCode;
     private String name;
@@ -351,7 +351,7 @@ public class Can {
 
 하나씩 하나씩 스탭을 밟아가면서 할 수 있는게 TDD의 매력같다.
 
-```Java
+```java
 public class MachineTest {
     @Rule
     public ExpectedException lackOfCashExceptionRule = ExpectedException.none();
@@ -370,11 +370,11 @@ public class MachineTest {
     }
 }
 ```
-```Java
+```java
 public class LackOfCashException extends Exception {
 }
 ```
-```Java
+```java
 public class Machine {
     public void selectCan(Can can) throws LackOfCashException{
         if (cash - can.getSellPrice() < 0) {
@@ -397,7 +397,7 @@ public class Machine {
 | __재고가 없으면 SoldOut 에러 던지기__ |
 | 거스름돈 돌려주기 |
 
-```Java
+```java
 public class MachineTest {
     @Rule
     public ExpectedException soldOutCanExceptionRule = ExpectedException.none();
@@ -414,11 +414,11 @@ public class MachineTest {
     }
 }
 ```
-```Java
+```java
 public class SoldOutCanException extends Exception {
 }
 ```
-```Java
+```java
 public class Machine {
     public void selectCan(Can can) throws LackOfCashException, SoldOutCanException{
         if (cash - can.getSellPrice() < 0) {
@@ -461,7 +461,7 @@ public class Machine {
 | 천원 넣고 600원짜리 음료 뽑으면 거스름돈으로 500원 객체 4개 담긴 Map이랑 비교해서 실패하기 |
 
 
-```Java
+```java
 public class MachineTest {
     @Test
     public void cashReturn_Insert1000KRWAndSelect600KRWCan_ShouldReturnFour100KRWCoins() throws LackOfCashException, SoldOutCanException {
@@ -480,7 +480,7 @@ public class MachineTest {
     }
 }
 ```
-```Java
+```java
 public class Machine {
     public Map<KRWCoin, Integer> cashReturn() {
         // 바로 구현할 자신이 없어서 stub으로 만들었다.
@@ -496,7 +496,7 @@ Intellij의 도움을 받아서 Equals와 hashCode를 만들었다.
 편하지만 어떤 의미인지 한번씩 코드리뷰는 하고 넘어가자. 
 
 본인의 의도와 다르게 비교를 할 수 있다.
-```Java
+```java
 public class KRWCoin {
     @Override
     public boolean equals(Object o) {
@@ -521,7 +521,7 @@ public class KRWCoin {
 | ~~천원 넣고 600원짜리 음료 뽑으면 거스름돈으로 100원 객체 4개 담긴 Map얻기~~ |
 | __천원 넣고 500원짜리 음료 뽑으면 거스름돈으로 500원 객체 1개 담긴 Map얻기__ |
 
-```Java
+```java
 public class MachineTest {
     @Test
     public void cashReturn_Insert1000KRWAndSelect500KRWCan_ShouldReturnOne500KRWCoins() throws LackOfCashException, SoldOutCanException {
@@ -543,7 +543,7 @@ public class MachineTest {
 
 Stub으로 만들어둔 Machine의 cashReturn 메소드를 제대로 구현하자.
 
-```Java
+```java
 public class Machine {
     public Map<KRWCoin, Integer> cashReturn() {
         Map<KRWCoin, Integer> result = new HashMap<>();
@@ -574,7 +574,7 @@ public class Machine {
 
 테스트 두개를 합치는게 나을 것 같다는 생각이 들었다.
 
-```Java
+```java
 public class MachineTest {
     @Test
     public void cashReturn_Insert1500KRWAndSelect600KRWCan_ShouldReturnOne500KRWCoinAndFour100KRWCoins() throws LackOfCashException, SoldOutCanException {
