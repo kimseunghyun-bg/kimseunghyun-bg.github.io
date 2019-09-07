@@ -594,4 +594,4 @@ Coin과 Bill 특성만 따로 빼서 확장성을 부여하고싶은 마음이 �
 ### 환경
 1. Language: Java 1.8
 2. Framework: Spring-Boot-2.1.7, Gradle-5.6
-3. Library: Junit-4.12, 
+3. Library: Junit-4.12
