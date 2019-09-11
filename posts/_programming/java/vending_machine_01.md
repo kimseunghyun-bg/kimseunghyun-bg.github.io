@@ -8,6 +8,7 @@ tags:
 
 1. [자판기 프로젝트 01 (with.TDD)](https://kimseunghyun-bg.github.io/programming/java/vending_machine_01/)
 2. [자판기 프로젝트 02 (with.TDD)](https://kimseunghyun-bg.github.io/programming/java/vending_machine_02/)
+3. [자판기 프로젝트 03 (with.JPA)](https://kimseunghyun-bg.github.io/programming/java/vending_machine_with_tdd_03/)
 
 ## 발단
 문득 자판기를 만들고 싶었다.
