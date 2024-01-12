@@ -1,15 +1,32 @@
 # main links
 main:
+  # - title: "About Me"
+  #   url: /about/
+  # - title: "Programming"
+  #   url: /programming/
+  #   children:
+  #     - title: "OOP"
+  #       url: /programming/oop/
+  #     - title: "Java"
+  #       url: /programming/java/
+  #     - title: "Python"
+  #       url: /programming/python/
+  #     - title: "Bash Shell"
+  #       url: /programming/bash_shell/
+  # - title: "DevOps"
+  #   url: /devops/
+  #   children:
+  #     - title: "SVN"
+  #       url: /devops/svn/
+  #     - title: "Docker"
+  #       url: /devops/docker/
+  #     - title: "Kubernetes"
+  #       url: /devops/kubernetes/
+
+side:
   - title: "About Me"
     url: /about/
   - title: "Programming"
-    url: /programming/
-  - title: "DevOps"
-    url: /devops/
-
-# programming links
-programming:
-  - title: programming
     url: /programming/
     children:
       - title: "OOP"
@@ -19,11 +36,8 @@ programming:
       - title: "Python"
         url: /programming/python/
       - title: "Bash Shell"
-        url: /programming/bash_shell/
-
-# devops links
-devops:
-  - title: devops
+        url: /programming/bash-shell/
+  - title: "DevOps"
     url: /devops/
     children:
       - title: "SVN"

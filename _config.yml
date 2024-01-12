@@ -13,6 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+locale: ko-KR
 title: 김승현의 기술/일상 블로그
 email: kimseunghyun.bg@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -95,14 +96,11 @@ footer:
     #   url: "https://instagram.com/"
 
 # Collections
-collections_dir: posts
-collections:
-  programming:
-    output: true
-    permalink: /:collection/:path/
-  devops:
-    output: true
-    permalink: /:collection/:path/
+# collections_dir: docs
+# collections:
+#   samplecollection:
+#     output: true
+#     permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -117,32 +115,9 @@ defaults:
       comments: true
       share: true
       related: false
+      classes: wide
       sidebar:
-        nav: "main"
-  - scope:
-      path: ""
-      type: programming
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: false
-      sidebar:
-        nav: "programming"
-  - scope:
-      path: ""
-      type: devops
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: false
-      sidebar:
-        nav: "devops"
+        nav: "side"
 
 # Archives
 #  Type

@@ -1,0 +1,8 @@
+---
+layout: archive
+---
+{% assign path_taxonomy = page.path | split: "/" | slice: -2 | first %}
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% include posts-category.html taxonomy=path_taxonomy type=entries_layout %}
+</div>
