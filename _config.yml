@@ -17,9 +17,7 @@ locale: ko-KR
 title: 김승현의 기술/일상 블로그
 email: kimseunghyun.bg@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  기술과 일상을 기록하는 블로그입니다.
 twitter_username: username
 github_username: kimseunghyun-bg
 minimal_mistakes_skin: default
@@ -66,9 +64,9 @@ analytics:
     anonymize_ip         : false
 
 author:
-  name   : "SEUNHYUN KIM"
+  name   : "김승현"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "걸음은 느리고 때때로 우두커니 서 있기도 하지만 꾸준히 나아가려 노력합니다."
   # links: 
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"
